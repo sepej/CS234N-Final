@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30523.141
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BITSEFClasses", "BITSEFClasses.csproj", "{F1C6A708-AB32-4722-A696-C00594528AC2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BITSEFTests", "..\BITSEFTests\BITSEFTests.csproj", "{6DF0E12B-F6FE-42E9-8C87-C4B3E772270D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F1C6A708-AB32-4722-A696-C00594528AC2} = {F1C6A708-AB32-4722-A696-C00594528AC2}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1C6A708-AB32-4722-A696-C00594528AC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1C6A708-AB32-4722-A696-C00594528AC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1C6A708-AB32-4722-A696-C00594528AC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1C6A708-AB32-4722-A696-C00594528AC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DF0E12B-F6FE-42E9-8C87-C4B3E772270D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DF0E12B-F6FE-42E9-8C87-C4B3E772270D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DF0E12B-F6FE-42E9-8C87-C4B3E772270D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DF0E12B-F6FE-42E9-8C87-C4B3E772270D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4D171BEB-5B95-41DE-90AF-DBCE5B9D1330}
+	EndGlobalSection
+EndGlobal
