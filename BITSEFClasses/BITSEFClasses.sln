@@ -10,6 +10,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BITSEFTests", "..\BITSEFTes
 		{F1C6A708-AB32-4722-A696-C00594528AC2} = {F1C6A708-AB32-4722-A696-C00594528AC2}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BITSRESTAPI", "..\BITSRESTAPI\BITSRESTAPI.csproj", "{A6FDAA25-CF28-445D-8EEC-4E8033926826}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{6DF0E12B-F6FE-42E9-8C87-C4B3E772270D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DF0E12B-F6FE-42E9-8C87-C4B3E772270D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DF0E12B-F6FE-42E9-8C87-C4B3E772270D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6FDAA25-CF28-445D-8EEC-4E8033926826}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6FDAA25-CF28-445D-8EEC-4E8033926826}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6FDAA25-CF28-445D-8EEC-4E8033926826}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6FDAA25-CF28-445D-8EEC-4E8033926826}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

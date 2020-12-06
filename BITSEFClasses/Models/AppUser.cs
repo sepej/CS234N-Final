@@ -14,5 +14,10 @@ namespace BITSEFClasses.Models
         public string Name { get; set; }
 
         public virtual ICollection<InventoryTransaction> InventoryTransaction { get; set; }
+
+        public override string ToString()
+        {
+            return AppUserId + ", " + Name;
+        }
     }
 }
