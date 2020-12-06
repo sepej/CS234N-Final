@@ -6,7 +6,7 @@ using NUnit.Framework;
 using BITSEFClasses.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace AppConfigTests
+namespace BITSEFTests
 {
     [TestFixture]
     public class AppConfigTests

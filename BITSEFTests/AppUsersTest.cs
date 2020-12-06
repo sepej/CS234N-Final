@@ -12,8 +12,8 @@ namespace BITSEFTests
     public class AppUsersTests
     {
         BITSEFContext dbContext;
-        AppConfig c;
-        List<AppConfig> configs;
+        AppUser u;
+        List<AppUser> users;
 
         [SetUp]
         public void Setup()
@@ -25,83 +25,74 @@ namespace BITSEFTests
         [Test]
         public void GetAllTest()
         {
-            configs = dbContext.AppConfig.OrderBy(c => c.BreweryId).ToList();
-            Assert.AreEqual(1, configs.Count);
-            Assert.AreEqual("Manifest", configs[0].BreweryName);
-            PrintAll(configs);
+            u = new AppUser();
+            u.Name = "Joseph";
+            dbContext.AppUser.Add(u);
+
+            AppUser u2 = new AppUser();
+            u2.Name = "Mari";
+            dbContext.AppUser.Add(u2);
+            dbContext.SaveChanges();
+
+            users = dbContext.AppUser.OrderBy(u => u.AppUserId).ToList();
+            Assert.AreEqual(2, users.Count);
+            Assert.AreEqual("Mari", users[1].Name);
+            PrintAll(users);
         }
 
         [Test]
         public void GetByPrimaryKeyTest()
         {
-            c = dbContext.AppConfig.Find(1);
-            Assert.IsNotNull(c);
-            Assert.AreEqual(1, c.BreweryId);
-            Console.WriteLine(c);
+            u = dbContext.AppUser.Find(2);
+            Assert.IsNotNull(u);
+            Assert.AreEqual("Joseph", u.Name);
+            Console.WriteLine(u);
+        }
+
+        [Test]
+        public void GetUsingWhere()
+        {
+            users = dbContext.AppUser.Where(u => u.Name.StartsWith("J")).OrderBy(u => u.Name).ToList();
+            Assert.AreEqual(1, users.Count);
+            Assert.AreEqual("Joseph", users[0].Name);
+            PrintAll(users);
         }
 
         [Test]
         public void CreateTest()
         {
-            c = new AppConfig();
-            c.BreweryId = 2;
-            c.DefaultUnits = "imperial";
-            c.BreweryName = "Joseph's Brewery";
-            c.HomePageText = "Home page text";
-            c.BreweryLogo = "logo.jpg";
-            c.HomePageBackgroundImage = "background.jpg";
-            c.Color1 = "8d81db";
-            c.Color2 = "57c7cf";
-            c.Color3 = "387047";
-            c.ColorWhite = "ffffff";
-            c.ColorBlack = "000000";
-            dbContext.AppConfig.Add(c);
+            u = new AppUser();
+            u.Name = "Mari";
+            dbContext.AppUser.Add(u);
             dbContext.SaveChanges();
-            AppConfig c2 = new AppConfig();
-            c2 = dbContext.AppConfig.Where(c => c.BreweryName == "Joseph's Brewery").SingleOrDefault();
-            Assert.AreEqual(c, c2);
+            Assert.IsNotNull(dbContext.AppUser.Find(1));
         }
 
         [Test]
         public void UpdateTest()
         {
-            c = dbContext.AppConfig.Find(1);
-            c.BreweryName = "Edited Brewery";
-            dbContext.AppConfig.Update(c);
+            u = dbContext.AppUser.Find(2);
+            u.Name = "Edited Name";
+            dbContext.AppUser.Update(u);
             dbContext.SaveChanges();
-            c = dbContext.AppConfig.Find(1);
-            Assert.AreEqual("Edited Brewery", c.BreweryName);
+            u = dbContext.AppUser.Find(2);
+            Assert.AreEqual("Edited Name", u.Name);
         }
 
         [Test]
         public void DeleteTest()
         {
-            c = new AppConfig();
-            c.BreweryId = 30;
-            c.DefaultUnits = "imperial";
-            c.BreweryName = "Joseph's Brewery";
-            c.HomePageText = "Home page text";
-            c.BreweryLogo = "logo.jpg";
-            c.HomePageBackgroundImage = "background.jpg";
-            c.Color1 = "8d81db";
-            c.Color2 = "57c7cf";
-            c.Color3 = "387047";
-            c.ColorWhite = "ffffff";
-            c.ColorBlack = "000000";
-            dbContext.AppConfig.Add(c);
+            u = dbContext.AppUser.Find(1);
+            dbContext.AppUser.Remove(u);
             dbContext.SaveChanges();
-
-            AppConfig c2 = dbContext.AppConfig.Single(c => c.BreweryId == 30);
-            dbContext.AppConfig.Remove(c2);
-            dbContext.SaveChanges();
-            Assert.IsNull(dbContext.AppConfig.Where(p => p.BreweryId == 30).SingleOrDefault());
+            Assert.IsNull(dbContext.AppUser.Find(1));
         }
 
-        public void PrintAll(List<AppConfig> configs)
+        public void PrintAll(List<AppUser> users)
         {
-            foreach (AppConfig c in configs)
+            foreach (AppUser u in users)
             {
-                Console.WriteLine(c);
+                Console.WriteLine(u);
             }
         }
     }
