@@ -50,7 +50,8 @@ namespace BITSRESTAPI
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
+            app.UseCors();
 
             app.UseRouting();
 
