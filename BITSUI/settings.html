@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Settings</title>
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  </nav>
+  <div class="container maincontainer">
+      <h1 class="title">Settings</h1>
+      <form id="settingsForm">
+        <div class="form-group">
+          <label for="breweryName">Brewery Name:</label>
+          <input type="text" class="form-control" required id="breweryname" name="breweryname">
+        </div>
+        <div class="form-group">
+          <label for="homePageText">Home Text:</label>
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">HTML</span>
+            <textarea class="form-control" rows="5" name="hometext" id="hometext"></textarea>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="color2">Header Color (hex value, 6 characters):</label>
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">#</span>
+            <input class="form-control" id="color2" name="color2" minlength="6" maxlength="6" required placeholder="ffffff">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="color3">Brewery Title Color (hex value, 6 characters):</label>
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">#</span>
+            <input class="form-control" id="color3" name="color3" minlength="6" maxlength="6" required placeholder="ffffff">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="color1">Body Background Color (hex value, 6 characters):</label>
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">#</span>
+            <input class="form-control" id="color1" name="color1" minlength="6" maxlength="6" required placeholder="ffffff">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="colorBlack">Body Text Color (hex value, 6 characters):</label>
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">#</span>
+            <input class="form-control" id="colorblack" name="colorblack" minlength="6" maxlength="6" required placeholder="ffffff">
+          </div>
+        </div>
+        <button id="submit" type="submit" class="btn btn-default">Submit</button>
+        <img src="./src/assets/images/loading.gif" alt="loading" class="loading-indicator hidden" id="loadingIndicator">
+      </form>
+  </div>
+  <script src="dist/settings.js"></script>
+</body>
+</html>
