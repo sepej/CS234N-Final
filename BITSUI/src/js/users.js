@@ -2,6 +2,11 @@ import './general';
 
 import createNavBar from './navbar.js';
 
+/*
+Still need to do:
+  Form to add and delete users from the database
+*/
+
 class Users {
   constructor() {
     this.state = {

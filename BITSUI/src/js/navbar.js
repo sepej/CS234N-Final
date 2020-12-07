@@ -1,3 +1,8 @@
+/*
+Still need to do:
+  Give access to only certain links the user has access to in the database
+*/
+
 export default function createNavBar(activePage) {
   const active = `class='active'`;
   const navHtml = `

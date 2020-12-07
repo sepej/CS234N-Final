@@ -2,6 +2,11 @@ import './general';
 
 import createNavBar from './navbar.js';
 
+/*
+Still need to do:
+  Make the username login form work
+*/
+
 class Home {
     constructor() {
       this.state = {

@@ -5,6 +5,13 @@ import createNavBar from './navbar.js';
 import toastr from 'toastr';
 import '../../node_modules/toastr/toastr.less';
 
+/*
+Still need to do:
+  Allow user to upload logo and background images.
+  Allow user to change the measurment field in the database.
+  Implement validation for all fields
+*/
+
 class Settings {
   constructor() {
     this.state = {
